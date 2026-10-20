@@ -1,0 +1,20 @@
+# Configuração segura do npm (Crivo). Copie para ~/.npmrc (ou mescle com o seu).
+
+# Não roda scripts de instalação (preinstall/postinstall), a via mais usada em ataques ao npm.
+# Se um pacote revisado precisar deles: npm rebuild <pacote> --ignore-scripts=false
+ignore-scripts=true
+
+# Só instala versões publicadas há mais de 7 dias (quarentena). Precisa do npm 11.10 ou mais novo.
+min-release-age=7
+
+# Grava a versão exata no package.json, sem ^ ou ~.
+save-exact=true
+
+# Instalações globais ficam no seu usuário, nunca no sistema (dispensa sudo).
+prefix=${HOME}/.local
+
+fund=false
+
+# pnpm NÃO lê a quarentena acima. Configure à parte:
+#   pnpm config set minimum-release-age 10080 --global   (minutos = 7 dias)
+#   pnpm config set ignore-scripts true --global

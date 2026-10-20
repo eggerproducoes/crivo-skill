@@ -1,0 +1,4 @@
+{
+  "name": "amostra",
+  "scripts": { "postinstall": "node coleta.js" }
+}

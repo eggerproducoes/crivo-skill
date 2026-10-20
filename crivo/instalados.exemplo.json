@@ -1,0 +1,54 @@
+{
+  "_sobre": "Inventário do Crivo: o que está instalado e em qual versão. Copie para ~/.claude/crivo/instalados.json, apague os exemplos e deixe o agente preencher a cada instalação. Tipos aceitos pelo verificador: node, github-release, github-tag, github-pasta, npm.",
+  "itens": [
+    {
+      "nome": "Node.js",
+      "tipo": "node",
+      "versao": "v24.21.0",
+      "linha": "24",
+      "critico": true,
+      "remover": "rm -rf ~/.local/opt/node-v24.21.0-linux-x64 ~/.local/bin/{node,npm,npx,corepack}"
+    },
+    {
+      "nome": "GitHub CLI (gh)",
+      "tipo": "github-release",
+      "repo": "cli/cli",
+      "versao": "v2.102.0",
+      "critico": true,
+      "remover": "rm -rf ~/.local/opt/gh_2.102.0_linux_amd64 ~/.local/bin/gh"
+    },
+    {
+      "nome": "pnpm",
+      "tipo": "npm",
+      "pacote": "pnpm",
+      "versao": "12.9.1",
+      "linha": "12",
+      "critico": true,
+      "remover": "npm uninstall -g pnpm"
+    },
+    {
+      "nome": "exemplo de skill oficial (uma pasta de um repositório)",
+      "tipo": "github-pasta",
+      "repo": "anthropics/skills",
+      "pasta": "skills/frontend-design",
+      "commit": "SHA-DO-ULTIMO-COMMIT-DA-PASTA-QUANDO-INSTALOU",
+      "remover": "rm -rf ~/.claude/skills/frontend-design"
+    },
+    {
+      "nome": "exemplo de plugin com ajustes locais (várias pastas acompanhadas)",
+      "tipo": "github-pasta",
+      "repo": "dono/repositorio",
+      "pastas": ["plugins/plugin-a", "plugins/plugin-b"],
+      "commit": "SHA",
+      "ajustes": "repositorio.patch",
+      "remover": "claude plugin uninstall plugin-a@catalogo-local --scope user && claude plugin uninstall plugin-b@catalogo-local --scope user"
+    },
+    {
+      "nome": "exemplo de pacote de skills com versões (tags)",
+      "tipo": "github-tag",
+      "repo": "dono/repositorio",
+      "versao": "v1.2.3",
+      "remover": "rm -rf ~/.claude/skills/nome-da-skill"
+    }
+  ]
+}

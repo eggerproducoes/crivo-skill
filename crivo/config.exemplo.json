@@ -1,0 +1,18 @@
+{
+  "_leia_me": "Copie para ~/.claude/crivo/config.json e troque os valores marcados com TROQUE. Veja CONFIGURAR.md.",
+
+  "idioma": "pt-BR",
+
+  "quarentena_dias": 7,
+  "quarentena_critico_dias": 14,
+  "verificar_a_cada_horas": 24,
+
+  "escopo_padrao": "projeto",
+
+  "email": {
+    "ativo": false,
+    "destino": "TROQUE@seu-dominio.com",
+    "conector": "gmail",
+    "_obs": "Ative (true) só se o seu agente tiver um conector de e-mail (ex.: Gmail). O Crivo nunca envia para outro endereço."
+  }
+}

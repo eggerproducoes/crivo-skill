@@ -1,0 +1,66 @@
+{
+  "_leia_me": "NÃO substitua seu ~/.claude/settings.json por este arquivo. Mescle os blocos abaixo com o que você já tem (veja CONFIGURAR.md). Comentários com _ são ignorados pelo Claude Code, mas pode removê-los.",
+
+  "env": {
+    "DO_NOT_TRACK": "1",
+    "DISABLE_TELEMETRY": "1",
+    "GH_TELEMETRY": "0"
+  },
+
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Write|Edit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -I \"$HOME/.claude/crivo/trava.py\"",
+            "timeout": 10,
+            "onFailure": "block"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -I \"$HOME/.claude/crivo/verificar-atualizacoes.py\" --hook",
+            "timeout": 45
+          }
+        ]
+      }
+    ]
+  },
+
+  "permissions": {
+    "deny": [
+      "Bash(gh repo delete *)",
+      "Bash(gh repo archive *)",
+      "Bash(git push --force *)",
+      "Bash(git push -f *)",
+      "Bash(git push --force-with-lease *)",
+      "Bash(gh auth token *)",
+      "Bash(gh auth token)",
+      "Read(~/.config/gh/**)",
+      "Bash(cat ~/.config/gh/*)"
+    ],
+    "ask": [
+      "Bash(git push *)",
+      "Bash(gh pr merge *)",
+      "Bash(gh pr create *)",
+      "Bash(gh repo create *)",
+      "Bash(gh repo edit *)",
+      "Bash(gh release *)",
+      "Bash(gh secret *)",
+      "Bash(gh variable *)",
+      "Bash(gh api *)",
+      "Bash(gh workflow run *)",
+      "Bash(gh auth *)",
+      "Bash(gh issue create *)",
+      "Bash(gh gist create *)"
+    ]
+  }
+}
