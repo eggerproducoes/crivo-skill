@@ -1,3 +1,5 @@
+🇧🇷 **Português** · 🇬🇧 [English](CONFIGURE.md)
+
 # Configurar o Crivo
 
 Tudo o que você precisa **copiar** e **trocar**. Os itens marcados com ✏️ têm valores pessoais.
@@ -7,9 +9,10 @@ Tudo o que você precisa **copiar** e **trocar**. Os itens marcados com ✏️ t
 ## 1. Copiar os arquivos
 
 ```bash
-# a skill
+# a skill — escolha UMA língua
 mkdir -p ~/.claude/skills
-cp -r skill/crivo-skill ~/.claude/skills/crivo-skill
+cp -r skill/crivo-skill ~/.claude/skills/crivo-skill        # português
+# ou: cp -r skill-en/crivo-skill ~/.claude/skills/crivo-skill  # inglês
 
 # os scripts e a pasta de dados do Crivo
 mkdir -p ~/.claude/crivo/ajustes ~/.claude/crivo/plugins ~/.claude/crivo/emails-pendentes
@@ -28,7 +31,7 @@ Se você usa outro local para skills (ex.: só num projeto: `.claude/skills/`), 
 | `email.ativo` | Liga o e-mail de registro após cada instalação | ✏️ `true` se tiver conector de e-mail |
 | `email.destino` | **Seu** e-mail. O Crivo nunca envia para outro endereço | ✏️ **obrigatório** se ativar |
 | `email.conector` | Nome do conector de e-mail do seu agente (ex.: `gmail`) | ✏️ se usar outro |
-| `idioma` | Idioma dos relatórios (ex.: `pt-BR`, `en`) | ✏️ se quiser |
+| `idioma` | Idioma dos relatórios (ex.: `pt-BR`, `en`) | ✏️ use `en` para inglês |
 | `quarentena_dias` | Idade mínima de uma versão para instalar | opcional (padrão 7) |
 | `quarentena_critico_dias` | Idem para ferramentas críticas | opcional (padrão 14) |
 | `verificar_a_cada_horas` | Frequência do verificador de atualizações | opcional (padrão 24) |

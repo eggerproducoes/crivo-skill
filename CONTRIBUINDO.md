@@ -1,3 +1,5 @@
+🇧🇷 **Português** · 🇬🇧 [English](CONTRIBUTING.md)
+
 # Contribuindo com o Crivo
 
 Obrigado por querer melhorar o Crivo! A ideia é juntar o que cada um aprende ao examinar skills, plugins e pacotes, para todo mundo instalar com mais segurança.
@@ -9,7 +11,7 @@ Obrigado por querer melhorar o Crivo! A ideia é juntar o que cada um aprende ao
 - **Lição aprendida** — um caso real (sem expor pessoas) que justifique uma regra nova no `SKILL.md`.
 - **Novas fontes no verificador** — PyPI, crates.io, Homebrew, Docker Hub, extensões de editor…
 - **Novos padrões na trava** — comandos de instalação de outros ecossistemas.
-- **Tradução** — o projeto é em português; versões em outros idiomas são bem-vindas.
+- **Tradução** — o projeto é em português e inglês; outros idiomas são bem-vindos.
 
 ## Como enviar uma mudança
 
@@ -17,7 +19,8 @@ Obrigado por querer melhorar o Crivo! A ideia é juntar o que cada um aprende ao
 2. Altere o que precisar. Se mexer na varredura ou na trava, **adicione um caso em `testes/`** (amostra inofensiva e/ou comando no `rodar-testes.sh`).
 3. Rode `bash testes/rodar-testes.sh` — tudo precisa passar.
 4. Atualize o `CHANGELOG.md` (seção "Não lançado").
-5. Abra um *pull request* explicando **o risco que a mudança cobre** e **como foi testada**.
+5. **Mantenha as duas línguas em sincronia**: se mudar um documento ou a skill, atualize a versão correspondente (`README.md` ↔ `README.en.md`, `CONFIGURAR.md` ↔ `CONFIGURE.md`, `CONTRIBUINDO.md` ↔ `CONTRIBUTING.md`, `SEGURANCA.md` ↔ `SECURITY.md`, `skill/` ↔ `skill-en/`). Se não souber traduzir, avise no PR que um mantenedor ajuda.
+6. Abra um *pull request* explicando **o risco que a mudança cobre** e **como foi testada**.
 
 ## Regras importantes
 

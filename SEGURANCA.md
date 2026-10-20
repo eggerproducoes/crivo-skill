@@ -1,3 +1,5 @@
+🇧🇷 **Português** · 🇬🇧 [English](SECURITY.md)
+
 # Política de segurança
 
 O Crivo é uma ferramenta de segurança — falhas nele podem dar uma falsa sensação de proteção.

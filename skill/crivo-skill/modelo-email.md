@@ -23,6 +23,12 @@ Assunto: `[Crivo] {{Tipo}} instalado(a): {{nome}} — {{dd/mm/aaaa}}`
     <tr><td style="padding:6px;border:1px solid #ddd">{{etapa}}</td><td style="padding:6px;border:1px solid #ddd">{{resultado}}</td></tr>
   </table>
 
+  <h3>Ajustes feitos</h3>
+  <!-- ex.: removido Bash automático, retirados hooks, só N de M skills. Se não houve ajustes, escreva "Nenhum". -->
+  <ul>
+    <li>{{ajuste}}</li>
+  </ul>
+
   <h3>Ressalvas</h3>
   <ol>
     <li>{{ressalva}}</li>

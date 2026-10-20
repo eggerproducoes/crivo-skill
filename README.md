@@ -1,10 +1,10 @@
+🇧🇷 **Português** · 🇬🇧 [English](README.en.md)
+
 # Crivo 🛡️ — segurança antes de instalar qualquer coisa no seu agente
 
 **Crivo** é uma skill para o [Claude Code](https://code.claude.com) (e agentes compatíveis com skills) que obriga o agente a **verificar a segurança de tudo o que for instalado** — skills, plugins, servidores MCP, pacotes npm/pip, binários, scripts `curl | bash` — **antes** de instalar, e só com a sua aprovação.
 
 Ela nasceu de uma necessidade prática: instalar uma skill de terceiro é dar ao agente instruções (e às vezes código) escritas por outra pessoa, que rodam **com as suas permissões** — seus arquivos, suas chaves, seu e-mail, seus deploys. Popularidade não é garantia: estrelas podem ser infladas, nomes podem ser imitados, e uma versão publicada ontem pode ser a versão comprometida.
-
-> 🇬🇧 **English summary** at the end.
 
 ## O que o Crivo faz
 
@@ -49,7 +49,13 @@ testes/
   rodar-testes.sh        ← testa varredura e trava com amostras
 CONFIGURAR.md            ← passo a passo do que trocar
 CONTRIBUINDO.md · SEGURANCA.md · CHANGELOG.md
+
+Versões em inglês (mesmo conteúdo):
+README.en.md · CONFIGURE.md · CONTRIBUTING.md · SECURITY.md
+skill-en/crivo-skill/    ← a skill em inglês (instale uma OU outra)
 ```
+
+> Os nomes de arquivos e pastas, as chaves de configuração e as mensagens dos scripts no terminal estão em português; a documentação e a skill estão disponíveis nas duas línguas, com o mesmo conteúdo.
 
 ## Instalação
 
@@ -87,14 +93,9 @@ Casos reais encontrados ao usar o Crivo:
 
 ## Contribua
 
-Achou um padrão de ataque que a varredura não pega? Um falso positivo chato? Um tipo de fonte que o verificador não conhece (PyPI, crates.io, Homebrew…)? Veja **[CONTRIBUINDO.md](CONTRIBUINDO.md)**. Vulnerabilidades no próprio Crivo: **[SEGURANCA.md](SEGURANCA.md)**.
+Achou um padrão de ataque que a varredura não pega? Um falso positivo chato? Um tipo de fonte que o verificador não conhece (PyPI, crates.io, Homebrew…)? Veja **[CONTRIBUINDO.md](CONTRIBUINDO.md)**. Vulnerabilidades no próprio Crivo: **[SEGURANCA.md](SEGURANCA.md)**. Contribuições em português ou inglês são bem-vindas.
 
 ## Licença
 
 [MIT](LICENSE).
 
----
-
-## 🇬🇧 English summary
-
-**Crivo** ("sieve" in Portuguese) is a Claude Code skill that makes the agent **security-vet anything before installing it** — skills, plugins, MCP servers, npm/pip packages, binaries, `curl | bash` scripts — and install only with your explicit approval. It checks provenance and reputation (impersonation, inflated stars), enforces a **version quarantine** (7 days; 14 for critical tools), downloads into an isolated folder without executing anything, verifies integrity (signatures/SLSA provenance/two-source checksums), runs a static scan plus a real read-through (network, telemetry, secrets, hidden installs, persistence, agent-specific risks such as `allowed-tools` auto-approvals and costly or invasive hooks), checks OSV advisories, proposes least privilege, gives a verdict, logs everything with an uninstall command, and can email you a report. A PreToolUse hook enforces approval for install commands, and an update checker warns when new versions clear quarantine (it never auto-installs). Documentation is in Portuguese; contributions in English are welcome.
